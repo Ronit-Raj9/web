@@ -47,15 +47,15 @@ const overview = fs.readFileSync('./templates/overview.html', 'utf-8');
 
 const server = http.createServer((req, res) => {
      const pathName = req.url;
-     
-     if (pathName === '/overview'  || pathName === '/' || pathName === '/overview.html'     ) {
+
+     if (pathName === '/overview' || pathName === '/' || pathName === '/overview.html') {
           res.end(overview);
      } else if (pathName === '/product' || pathName === '/product.html') {
           res.end(product);
      } else {
           res.writeHead(404, {
-               'Content-type' : 'text/html',
-               'my-own-header' : 'Hello-world'
+               'Content-type': 'text/html',
+               'my-own-header': 'Hello-world'
           });
           res.end('<h1> Page not found! </h1>');
      }
@@ -64,27 +64,3 @@ const server = http.createServer((req, res) => {
 server.listen(8000, '127.0.0.1', () => {
      console.log('Listening to request on port 8000');
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
